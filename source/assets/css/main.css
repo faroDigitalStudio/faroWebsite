@@ -1,15 +1,15 @@
 /**
-* Template Name: Strategy
-* Template URL: https://bootstrapmade.com/strategy-bootstrap-agency-template/
-* Updated: Jun 06 2025 with Bootstrap v5.3.6
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+* Name: main.css
+* Created: 03.29.2026
+* Updated: 03.30.2026
+* Author: Faro Digital Studio
 */
 
 /*--------------------------------------------------------------
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
+
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -19,22 +19,27 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #031119; /* Background color for the entire website, including individual sections */
-  --default-color: rgba(255, 255, 255, 0.8); /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #e0e9f2; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #e3a127; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #1b262c; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #031119;
+  --default-color: rgba(255, 255, 255, 0.82);
+  --heading-color: #e6edf3;
+
+  /* UPDATED BRAND COLORS */
+  --accent-color: #d39a5a; /* closer to your logo orange */
+  --accent-deep: #b97f3f;
+  --accent-soft: rgba(211, 154, 90, 0.12);
+
+  --surface-color: #14222b;
+  --contrast-color: #ffffff;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: rgba(255, 255, 255, 0.8);  /* The default color of the main navmenu links */
-  --nav-hover-color: #e3a127; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: var(--accent-color); /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #29343a; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #29343a; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: rgba(255, 255, 255, 0.8); /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #e3a127; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: var(--accent-color); /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -3776,3 +3781,917 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.hero-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #0b1220 10%, transparent 60%);
+}
+
+/* =========================
+   PORTFOLIO ENHANCEMENTS
+========================= */
+
+/* Base card separation */
+.portfolio .portfolio-entry {
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.35s ease;
+}
+
+/* Subtle idle overlay (gives structure before hover) */
+.portfolio .portfolio-entry::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.0) 40%,
+    rgba(0,0,0,0.35) 100%
+  );
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Hover lift + glow */
+.portfolio .portfolio-entry:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+}
+
+/* Stronger hover overlay */
+.portfolio .portfolio-entry:hover::after {
+  opacity: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.1) 20%,
+    rgba(0,0,0,0.75) 100%
+  );
+}
+
+/* Slight image dim on hover (adds clarity) */
+.portfolio .portfolio-entry:hover img {
+  filter: brightness(0.75);
+}
+
+/* Accent glow edge */
+.portfolio .portfolio-entry:hover {
+  box-shadow:
+    0 0 0 1px rgba(211,154,90,0.4),
+    0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   BUTTON COLOR FIX
+========================= */
+
+.btn,
+.btn-primary,
+.btn-getstarted {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn-getstarted:hover {
+  background-color: var(--accent-deep);
+  border-color: var(--accent-deep);
+  color: var(--contrast-color);
+}
+
+/* Remove washed yellow look */
+.btn-outline {
+  border: 1px solid rgba(211,154,90,0.4);
+  color: var(--accent-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .portfolio .row {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 10px;
+  }
+
+  .portfolio .portfolio-item {
+    min-width: 85%;
+    flex: 0 0 auto;
+  }
+}
+
+/* =========================
+   PORTFOLIO HTML SUPPORT
+========================= */
+
+.entry-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.portfolio-entry:hover .entry-border {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px rgba(211,154,90,0.4);
+}
+
+.entry-desc {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* MOBILE SCROLL (cleaner than stacking) */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 10px;
+  }
+
+  .portfolio-item {
+    min-width: 85%;
+    flex: 0 0 auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# Faro Final Iteration Overrides
+--------------------------------------------------------------*/
+
+.text-accent {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Navigation / footer tightening */
+.footer .footer-about .logo span {
+  font-size: 26px;
+}
+
+@media (max-width: 768px) {
+  .footer .footer-about .logo span {
+    font-size: 22px;
+  }
+}
+
+/* Hero layered artwork */
+.hero {
+  padding: 118px 0 90px;
+}
+
+.hero .content-col {
+  padding-right: 1.5rem;
+}
+
+.hero .main-heading {
+  margin-bottom: 1.5rem;
+}
+
+.hero .main-heading h1 {
+  font-size: clamp(3.35rem, 6vw, 5.35rem);
+  letter-spacing: -1.2px;
+}
+
+.hero .description p {
+  font-size: 1.05rem;
+  max-width: 640px;
+}
+
+.hero .visual-content {
+  min-height: 560px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero-visual-wrapper {
+  position: relative;
+  width: min(120%, 760px);
+  margin-left: auto;
+}
+
+.hero-base-img,
+.hero-overlay-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-base-img {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-overlay-img {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  animation: heroOverlayFloat 7.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroOverlayFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.hero .cta-button .btn,
+.hero .cta-button .btn:focus {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--heading-color);
+}
+
+.hero .cta-button .btn:hover,
+.hero .cta-button .btn:focus:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.hero .cta-button .hero-secondary-btn {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(211, 154, 90, 0.4);
+  color: var(--heading-color);
+}
+
+.hero .cta-button .hero-secondary-btn:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 110px 0 70px;
+  }
+
+  .hero .content-col {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .hero .visual-content {
+    min-height: auto;
+    justify-content: center;
+  }
+
+  .hero-visual-wrapper {
+    width: min(100%, 700px);
+    margin: 0 auto;
+  }
+}
+
+/* Section title rhythm */
+.section-title {
+  padding-bottom: 44px;
+}
+
+.section-title div {
+  font-size: clamp(1.8rem, 3.1vw, 2.35rem);
+  text-transform: none;
+  letter-spacing: -0.02em;
+}
+
+/* About */
+.about .about-content h2 {
+  max-width: 14ch;
+}
+
+.about .about-content .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+}
+
+/* Services */
+.services .service-header {
+  margin-bottom: 42px;
+}
+
+.services .service-header .service-intro .service-heading {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  max-width: 12ch;
+  letter-spacing: -0.03em;
+}
+
+.services .service-header .service-intro .service-heading div,
+.services .service-header .service-intro .service-heading span {
+  display: inline;
+  color: inherit;
+}
+
+.services .service-header .service-summary p {
+  max-width: 300px;
+}
+
+.services .service-header .service-summary .service-btn {
+  border-radius: 999px;
+  padding: 12px 24px;
+}
+
+.services .service-card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.services .service-card h3 {
+  font-size: 24px;
+  line-height: 1.12;
+}
+
+.services .service-card h3 span {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .services .service-card {
+    padding: 32px 24px;
+  }
+
+  .services .service-card .service-icon {
+    position: static;
+    margin-bottom: 18px;
+  }
+}
+
+/* Process */
+.steps .step-info {
+  border-radius: 16px;
+}
+
+/* CTA section */
+.call-to-action {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 96%);
+}
+
+.call-to-action .badge {
+  letter-spacing: 0.02em;
+}
+
+.call-to-action p {
+  max-width: 820px;
+}
+
+.call-to-action .cta-buttons .btn.btn-primary {
+  box-shadow: 0 10px 26px rgba(211, 154, 90, 0.18);
+}
+
+.call-to-action .cta-buttons .btn.btn-outline {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(211, 154, 90, 0.42);
+  color: var(--heading-color);
+}
+
+.call-to-action .cta-buttons .btn.btn-outline:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.call-to-action .content-right {
+  width: min(100%, 470px);
+}
+
+.call-to-action .content-right img {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 991.98px) {
+  .call-to-action .content-right {
+    margin-top: 1.25rem;
+  }
+}
+
+/* Portfolio */
+.portfolio .portfolio-entry {
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+.portfolio .portfolio-entry .entry-image {
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio .portfolio-entry::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 34%, rgba(0, 0, 0, 0.42) 100%);
+  opacity: 0.9;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay {
+  background: linear-gradient(180deg, rgba(2, 10, 16, 0) 15%, rgba(2, 10, 16, 0.42) 48%, rgba(2, 10, 16, 0.92) 100%);
+  align-items: flex-end;
+  padding: 26px;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .entry-meta {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .entry-title {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.entry-desc {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.45;
+}
+
+.portfolio .entry-links {
+  gap: 0;
+}
+
+.portfolio .entry-links .entry-cta {
+  width: auto;
+  height: auto;
+  min-height: unset;
+  opacity: 1;
+  transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--accent-color), white 8%);
+  color: #0a1318;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.portfolio .entry-links .entry-cta i {
+  font-size: 16px;
+  margin-left: 0;
+}
+
+.portfolio .entry-links .entry-cta:hover {
+  background: #f2ece4;
+  color: #09131a;
+  transform: translateY(-2px);
+}
+
+.entry-border {
+  border: 1px solid rgba(211, 154, 90, 0.22);
+}
+
+.portfolio-entry:hover .entry-border {
+  border-color: rgba(211, 154, 90, 0.85);
+  box-shadow: 0 0 0 1px rgba(211, 154, 90, 0.28);
+}
+
+.portfolio .portfolio-entry:hover .entry-image img {
+  transform: scale(1.03);
+  filter: brightness(0.72);
+}
+
+.portfolio .portfolio-entry:hover .entry-image .entry-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio .portfolio-entry:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 18px;
+  }
+
+  .portfolio-item {
+    scroll-snap-align: start;
+    min-width: 86%;
+  }
+
+  .portfolio .portfolio-entry .entry-image .entry-overlay {
+    padding: 22px;
+  }
+
+  .portfolio .portfolio-entry .entry-image .entry-overlay .entry-title {
+    font-size: 20px;
+  }
+}
+
+/* Pricing */
+.pricing .section-title div {
+  max-width: 18ch;
+}
+
+.pricing .pricing-card {
+  border-radius: 22px;
+}
+
+.pricing .plan-header h3 {
+  font-size: 26px;
+}
+
+.pricing .plan-pricing .amount {
+  font-size: clamp(3rem, 5vw, 4rem);
+}
+
+.pricing-recurring {
+  margin-top: 14px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 22%);
+  line-height: 1.5;
+}
+
+.pricing .plan-features ul li {
+  align-items: flex-start;
+  line-height: 1.45;
+}
+
+.pricing .plan-features ul li i {
+  margin-top: 2px;
+}
+
+.pricing .plan-cta .btn-plan {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--heading-color);
+}
+
+.pricing .plan-cta .btn-plan:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.pricing .pricing-card.popular .plan-cta .btn-plan {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing .pricing-card.popular .plan-cta .btn-plan:hover {
+  background-color: var(--accent-deep);
+}
+
+/* FAQ */
+.faq .faq-title {
+  font-size: clamp(2rem, 3.2vw, 2.5rem);
+}
+
+.faq .faq-container .faq-item {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Contact */
+.contact .contact-form-wrapper .btn-submit,
+.contact .contact-form-wrapper .btn-submit:focus {
+  min-width: 220px;
+}
+
+/* Utility button consistency */
+.btn,
+.btn-primary,
+.btn-getstarted {
+  font-weight: 600;
+}
+
+.btn-outline,
+.btn-outline:focus {
+  color: var(--heading-color);
+}
+
+
+/*--------------------------------------------------------------
+# Faro Final Polish v2
+--------------------------------------------------------------*/
+
+/* Section title widths / alignment */
+.section-title div,
+.pricing .section-title div,
+.about .about-content h2,
+.services .service-header .service-intro .service-heading {
+  max-width: none;
+}
+
+.services .service-header .service-intro .service-heading {
+  font-size: clamp(2.45rem, 4.2vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin-right: 1rem;
+}
+
+.services .service-header .service-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.services .service-header .service-summary p {
+  max-width: 320px;
+}
+
+@media (max-width: 991px) {
+  .services .service-header .service-summary {
+    align-items: flex-start;
+  }
+}
+
+.about .about-content h2 {
+  font-size: clamp(2rem, 3.1vw, 3rem);
+}
+
+/* Hero copy refinement */
+.hero .description p {
+  max-width: 640px;
+}
+
+.hero .visual-content {
+  min-height: 590px;
+}
+
+.hero-visual-wrapper {
+  width: min(125%, 800px);
+}
+
+@media (max-width: 991px) {
+  .hero .visual-content {
+    min-height: auto;
+  }
+
+  .hero-visual-wrapper {
+    width: min(100%, 720px);
+  }
+}
+
+/* CTA button visibility */
+.call-to-action .cta-buttons .btn.btn-outline,
+.call-to-action .cta-buttons .btn.btn-outline:focus {
+  color: var(--heading-color) !important;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(211, 154, 90, 0.42);
+}
+
+.call-to-action .cta-buttons .btn.btn-outline:hover,
+.call-to-action .cta-buttons .btn.btn-outline:focus:hover {
+  color: var(--contrast-color) !important;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Portfolio hover / CTA fix */
+.portfolio .portfolio-entry {
+  border-radius: 20px;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay {
+  padding: 26px;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 17, 25, 0.02) 8%,
+    rgba(3, 17, 25, 0.58) 58%,
+    rgba(3, 17, 25, 0.96) 100%
+  );
+}
+
+.portfolio .portfolio-entry:hover .entry-image .entry-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .overlay-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: none;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .entry-title {
+  margin: 0 0 6px;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .entry-links {
+  display: block;
+  margin-top: 14px;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .entry-links .entry-cta,
+.portfolio .portfolio-entry:hover .entry-image .entry-overlay .entry-links .entry-cta {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 11px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 1 !important;
+  transform: none !important;
+  background: rgba(211, 154, 90, 0.96);
+  color: #071018;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .entry-links .entry-cta i {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.portfolio .portfolio-entry .entry-image .entry-overlay .entry-links .entry-cta:hover {
+  background: #f3e6d6;
+  color: #071018;
+}
+
+.portfolio .portfolio-entry:hover .entry-image img {
+  filter: brightness(0.72);
+}
+
+.entry-desc {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.entry-border {
+  border-color: rgba(211, 154, 90, 0.24);
+}
+
+/* Pricing cleanup */
+.pricing .popular-tag {
+  background-color: var(--accent-color);
+}
+
+.pricing .plan-cta {
+  display: none;
+}
+
+.pricing .pricing-card.popular .plan-cta .btn-plan,
+.pricing .plan-cta .btn-plan {
+  display: none;
+}
+
+.pricing-main-cta {
+  min-width: 230px;
+  border-radius: 999px;
+  padding-inline: 24px;
+}
+
+.pricing-recurring {
+  margin-top: 14px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 22%);
+  line-height: 1.5;
+}
+
+.pricing .plan-features ul li {
+  align-items: flex-start;
+  line-height: 1.45;
+}
+
+.pricing .plan-features ul li i {
+  margin-top: 2px;
+}
+
+@media (max-width: 992px) {
+  .pricing .pricing-card {
+    max-width: 100%;
+  }
+}
+
+/* Smaller footer */
+.footer {
+  padding-bottom: 26px;
+}
+
+.footer .footer-top {
+  padding-top: 34px;
+  padding-bottom: 6px;
+}
+
+.footer .footer-about .logo {
+  margin-bottom: 14px;
+}
+
+.footer .footer-about .logo span {
+  font-size: 24px;
+}
+
+.footer .footer-about p {
+  margin-bottom: 8px;
+}
+
+.footer .footer-note {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  max-width: 620px;
+}
+
+.footer .footer-contact p {
+  margin-bottom: 8px;
+}
+
+.footer .footer-cta {
+  margin-top: 10px;
+  border-radius: 999px;
+}
+
+.footer .copyright {
+  padding-top: 18px;
+  padding-bottom: 12px;
+}
+
+@media (max-width: 991px) {
+  .footer .footer-contact {
+    text-align: left !important;
+  }
+}
+
+/* Stronger portfolio hover overlay */
+.portfolio-entry .entry-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(3, 17, 25, 0.08) 0%,
+    rgba(3, 17, 25, 0.22) 40%,
+    rgba(3, 17, 25, 0.82) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.portfolio-entry:hover .entry-overlay {
+  opacity: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 17, 25, 0.18) 0%,
+    rgba(3, 17, 25, 0.45) 38%,
+    rgba(3, 17, 25, 0.92) 100%
+  );
+}
+
+/* Make the image itself dim slightly on hover */
+.portfolio-entry img {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.portfolio-entry:hover img {
+  filter: brightness(0.62);
+  transform: scale(1.02);
+}
+
+/* Make text and CTA pop more clearly */
+.portfolio-entry .overlay-content {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 24px 24px 22px;
+  z-index: 3;
+}
+
+.portfolio-entry .entry-title,
+.portfolio-entry .entry-meta,
+.portfolio-entry .entry-desc {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Slightly stronger button presence */
+.portfolio-entry .entry-cta {
+  background: rgba(211, 154, 90, 0.96);
+  border: 1px solid rgba(211, 154, 90, 1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.portfolio-entry .entry-cta:hover {
+  background: rgba(185, 127, 63, 0.98);
+  border-color: rgba(185, 127, 63, 1);
+}
+
+.portfolio-entry .entry-overlay { z-index: 2 !important; }
+.portfolio-entry .overlay-content { z-index: 10 !important; position: relative !important; }
+.portfolio-entry .entry-cta { z-index: 11 !important; position: relative !important; }
+.portfolio-entry .entry-border { z-index: 12 !important; }
+.portfolio-entry .entry-image img { z-index: 1 !important; position: relative !important; }
