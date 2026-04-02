@@ -2,7 +2,7 @@
 ## Business webpage for Faro Digital Studio
 ## Live at [farodigitalstudio.com](https://farodigitalstudio.com/)
 
-**Version: 0.1.0**
+**Version: 0.1.1**
 
 ### Table of Contents
 * [Structure of the Site](#structure-of-the-site)
@@ -26,17 +26,20 @@ The site currently includes:
 - Supporting CTA section
 - Portfolio section
 - Pricing section
+- Contact section
 - FAQ section
 - Footer
 
 #### Features
 Current core features include:
 - Faro-branded navigation and footer
+- Responsive navigation with mobile-friendly CTA handling
 - Layered hero visual system with lighthouse imagery
+- About and CTA imagery tailored to Faro’s messaging
 - Services and process sections tailored to Faro’s offer
-- Portfolio section using screenshot-based project cards
+- Portfolio section using live project screenshots
 - Pricing section with tiered packages and shared annual maintenance logic
-- FAQ section focused on common client questions
+- FAQ section focused on practical client questions
 - Discovery call CTA flow through Calendly
 - Google Analytics integration
 - Responsive layout based on the original BootstrapMade template
@@ -46,11 +49,11 @@ Current core features include:
 ### Planning
 
 Near-term priorities:
-- Finalize image polish and hover behavior across portfolio cards
-- Continue refining microcopy and spacing where needed
-- Ensure all screenshots are consistently cropped and optimized
+- Finalize remaining microcopy polish after live testing
+- Continue refining spacing and responsiveness across breakpoints
+- Ensure all portfolio screenshots are consistently cropped and optimized
 - Validate mobile behavior across sections and devices
-- Add lightweight policy / ownership language where appropriate
+- Consider a lightweight policy / ownership section if needed
 - Consider future blog / insights page
 - Consider future expanded portfolio / case study pages
 
@@ -63,17 +66,20 @@ Near-term priorities:
 - Removed unnecessary template sections and dead-end filler content
 - Simplified navbar to the most important sections
 - Added Faro logo integration in header and footer
-- Reworked hero structure and supporting visual direction
+- Reworked hero structure around the lighthouse visual direction
+- Added supporting section imagery aligned to Faro’s tone and messaging
 - Added real portfolio items based on live websites
+- Improved portfolio hover styling and CTA presentation
 - Updated pricing logic to reflect Faro’s actual offer structure
-- Refined CTA strategy around discovery calls
-- Tightened site copy to sound clearer and more on-brand
+- Simplified CTA strategy and removed redundant section-jump buttons
+- Tightened site copy to sound clearer, more modern, and more customer-facing
+- Refined mobile hero layout, including cleaner stacked CTA behavior
 - Adjusted colors and accents to better align with Faro’s logo and palette
 
 #### In Progress
-- Final visual polish on hover states and overlays
-- Ongoing image iteration for supporting sections
-- Minor spacing / alignment refinements after live preview testing
+- Final live-browser polish after device testing
+- Minor spacing / alignment refinements as needed
+- Additional image iteration where helpful
 
 #### Future
 - Blog / insights section

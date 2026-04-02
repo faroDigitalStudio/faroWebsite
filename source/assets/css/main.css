@@ -1,7 +1,7 @@
 /**
 * Name: main.css
-* Created: 03.29.2026
-* Updated: 03.30.2026
+* Project: Faro Digital Studio
+* Updated: 04.01.2026
 * Author: Faro Digital Studio
 */
 
@@ -4695,3 +4695,107 @@ section,
 .portfolio-entry .entry-cta { z-index: 11 !important; position: relative !important; }
 .portfolio-entry .entry-border { z-index: 12 !important; }
 .portfolio-entry .entry-image img { z-index: 1 !important; position: relative !important; }
+
+/* --------------------------------------------------------------
+# Faro Final Mobile + Copy Polish
+-------------------------------------------------------------- */
+
+@media (max-width: 767.98px) {
+  .hero .cta-button {
+    justify-content: center;
+    align-items: stretch;
+    gap: 14px !important;
+  }
+
+  .hero .cta-button .btn,
+  .hero .cta-button .hero-secondary-btn {
+    width: min(100%, 420px);
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero .cta-button .btn span {
+    margin-right: 10px;
+  }
+
+  .hero .description {
+    margin-bottom: 2rem;
+  }
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  min-width: 136px;
+  text-align: center;
+}
+
+.services .service-header .service-summary .service-btn,
+.pricing-main-cta,
+.call-to-action .cta-buttons .btn.btn-primary,
+.contact .contact-form-wrapper .btn-submit {
+  border-radius: 999px;
+}
+
+.section-title div {
+  max-width: 28ch;
+}
+
+.portfolio .section-title div {
+  max-width: 30ch;
+}
+
+.call-to-action .cta-buttons {
+  margin-top: 4px;
+}
+
+.call-to-action .cta-buttons .btn + .btn {
+  display: none;
+}
+
+.call-to-action h2 {
+  max-width: 14ch;
+}
+
+.pricing .plan-header p {
+  max-width: 31ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing .plan-features ul li {
+  font-size: 14.5px;
+}
+
+.pricing .plan-features ul li.disabled {
+  opacity: 0.88;
+}
+
+.footer .footer-about p {
+  max-width: 34ch;
+}
+
+.hero .main-heading h1 {
+  max-width: 10ch;
+}
+
+@media (max-width: 991.98px) {
+  .hero .main-heading h1 {
+    max-width: none;
+  }
+}
+
+.brand-short {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .brand-full {
+    display: none;
+  }
+
+  .brand-short {
+    display: inline;
+  }
+}
