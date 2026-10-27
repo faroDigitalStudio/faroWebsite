@@ -2,7 +2,7 @@
 ## Business webpage for Faro Digital Studio
 ## Live at [farodigitalstudio.com](https://farodigitalstudio.com/)
 
-**Version: 0.1.1**
+**Version: 0.1.2**
 
 ### Table of Contents
 * [Structure of the Site](#structure-of-the-site)
@@ -25,7 +25,7 @@ The site currently includes:
 - Process section
 - Supporting CTA section
 - Portfolio section
-- Pricing section
+- Website development and project inquiry section
 - Contact section
 - FAQ section
 - Footer
@@ -38,9 +38,10 @@ Current core features include:
 - About and CTA imagery tailored to Faro’s messaging
 - Services and process sections tailored to Faro’s offer
 - Portfolio section using live project screenshots
-- Pricing section with tiered packages and shared annual maintenance logic
+- Website development section with tailored, scope-based quotes
 - FAQ section focused on practical client questions
-- Discovery call CTA flow through Calendly
+- Project inquiry and discovery call CTAs through Calendly
+- Hosting, maintenance, and ongoing support positioned as post-launch services
 - Google Analytics integration
 - Responsive layout based on the original BootstrapMade template
 
@@ -70,8 +71,8 @@ Near-term priorities:
 - Added supporting section imagery aligned to Faro’s tone and messaging
 - Added real portfolio items based on live websites
 - Improved portfolio hover styling and CTA presentation
-- Updated pricing logic to reflect Faro’s actual offer structure
-- Simplified CTA strategy and removed redundant section-jump buttons
+- Replaced public pricing packages with tailored website development messaging
+- Refined navigation and hero CTAs to highlight portfolio work and reduce redundant quote links
 - Tightened site copy to sound clearer, more modern, and more customer-facing
 - Refined mobile hero layout, including cleaner stacked CTA behavior
 - Adjusted colors and accents to better align with Faro’s logo and palette
