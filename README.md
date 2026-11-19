@@ -1,89 +1,44 @@
-# faroWebsite
-## Business webpage for Faro Digital Studio
-## Live at [farodigitalstudio.com](https://farodigitalstudio.com/)
+# Faro Digital Studio
 
-**Version: 0.1.2**
+**Brand, web, and content. Built for momentum.**
 
-### Table of Contents
-* [Structure of the Site](#structure-of-the-site)
-  * [Layout](#layout)
-  * [Features](#features)
-* [Planning](#planning)
-* [Updates](#updates)
+[Faro Digital Studio](https://farodigitalstudio.com) is a responsive, single-page website showcasing branding, web development, digital systems, and ongoing support. It highlights selected projects and directs new inquiries through a streamlined contact form.
 
----
+**Version: 0.1.4**
 
-### Structure of the Site
+## Features
 
-The Faro Digital Studio website is designed to position Faro as a clear, modern, brand-forward studio focused on helping businesses improve their online presence through branding, web design, web development, and related digital support.
-
-#### Layout
-The site currently includes:
-- Hero section
-- About section
-- Services section
-- Process section
-- Supporting CTA section
-- Portfolio section
-- Website development and project inquiry section
-- Contact section
-- FAQ section
-- Footer
-
-#### Features
-Current core features include:
-- Faro-branded navigation and footer
-- Responsive navigation with mobile-friendly CTA handling
-- Layered hero visual system with lighthouse imagery
-- About and CTA imagery tailored to Faro’s messaging
-- Services and process sections tailored to Faro’s offer
-- Portfolio section using live project screenshots
-- Website development section with tailored, scope-based quotes
-- FAQ section focused on practical client questions
-- Project inquiry and discovery call CTAs through Calendly
-- Hosting, maintenance, and ongoing support positioned as post-launch services
+- Lighthouse-inspired hero with layered artwork and subtle motion
+- Clear approach and four focused service areas
+- Full-width project case studies with screenshot previews, capability highlights, and live-site links
+- Responsive layouts, restrained background textures, and consistent accent styling
+- Formspark project inquiry with basic field validation and a honeypot
+- Hosting, maintenance, and ongoing support positioning without public pricing packages
 - Google Analytics integration
-- Responsive layout based on the original BootstrapMade template
 
----
+## Featured Work
 
-### Planning
+- **Finest Finish Painting:** Local service presentation and estimate inquiries
+- **Oddfield Productions:** Interactive event planning, cost modeling, and break-even exploration
+- **The Rio Flows:** Movement brand, class registration, training pathways, and community signups
+- **Ledger & Flow:** Professional services, credentials, and clear inquiry paths
 
-Near-term priorities:
-- Finalize remaining microcopy polish after live testing
-- Continue refining spacing and responsiveness across breakpoints
-- Ensure all portfolio screenshots are consistently cropped and optimized
-- Validate mobile behavior across sections and devices
-- Consider a lightweight policy / ownership section if needed
-- Consider future blog / insights page
-- Consider future expanded portfolio / case study pages
+## Built With
 
----
+- HTML, CSS, and JavaScript
+- Bootstrap and Bootstrap Icons
+- BootstrapMade Strategy template and existing vendor assets
+- Formspark for project inquiries
+- Google Analytics 4
 
-### Updates
+## Project Files
 
-#### Completed
-- Replaced generic template content with Faro-specific content
-- Removed unnecessary template sections and dead-end filler content
-- Simplified navbar to the most important sections
-- Added Faro logo integration in header and footer
-- Reworked hero structure around the lighthouse visual direction
-- Added supporting section imagery aligned to Faro’s tone and messaging
-- Added real portfolio items based on live websites
-- Improved portfolio hover styling and CTA presentation
-- Replaced public pricing packages with tailored website development messaging
-- Refined navigation and hero CTAs to highlight portfolio work and reduce redundant quote links
-- Tightened site copy to sound clearer, more modern, and more customer-facing
-- Refined mobile hero layout, including cleaner stacked CTA behavior
-- Adjusted colors and accents to better align with Faro’s logo and palette
+- `index.html` - Page content, navigation, portfolio, and inquiry form
+- `assets/css/main.css` - Visual styling, animations, and responsive layouts
+- `assets/js/main.js` - Existing site interactions
+- `assets/img/` - Brand artwork, `projectInquiry.png`, and portfolio screenshots
 
-#### In Progress
-- Final live-browser polish after device testing
-- Minor spacing / alignment refinements as needed
-- Additional image iteration where helpful
+## Links
 
-#### Future
-- Blog / insights section
-- Expanded portfolio case studies
-- Optional policy / code ownership section
-- Additional service detail pages if needed
+- **Website:** [farodigitalstudio.com](https://farodigitalstudio.com)
+- **Contact:** [discover@farodigitalstudio.com](mailto:discover@farodigitalstudio.com)

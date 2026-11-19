@@ -4799,3 +4799,762 @@ section,
     display: inline;
   }
 }
+
+/* --------------------------------------------------------------
+# Faro Focused Site Pass | 11.19.2026
+# Scoped updates for shared accent, service layout, intake, and footer.
+-------------------------------------------------------------- */
+
+/* One accent family across text, navigation CTA, and hero CTA. */
+.header .btn-getstarted,
+.header .btn-getstarted:focus,
+.hero .cta-button .hero-primary-btn,
+.hero .cta-button .hero-primary-btn:focus,
+.contact .contact-form-wrapper .btn-submit,
+.contact .contact-form-wrapper .btn-submit:focus {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #071018;
+  font-weight: 700;
+}
+.header .btn-getstarted:hover,
+.hero .cta-button .hero-primary-btn:hover,
+.contact .contact-form-wrapper .btn-submit:hover {
+  background-color: var(--accent-deep);
+  border-color: var(--accent-deep);
+  color: #071018;
+}
+.hero .cta-button .hero-secondary-btn,
+.hero .cta-button .hero-secondary-btn:focus {
+  background: transparent;
+  color: var(--heading-color);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+}
+.hero .cta-button .hero-secondary-btn:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border-color: var(--accent-color);
+  color: var(--heading-color);
+}
+
+/* Tighter section rhythm without changing the original design. */
+.about.section,
+.services.section,
+.portfolio.section,
+.contact.section {
+  padding-top: clamp(52px, 6vw, 76px);
+  padding-bottom: clamp(52px, 6vw, 76px);
+}
+.section-title { padding-bottom: 32px; }
+.about .about-content h2 { margin-bottom: 14px; }
+.about .about-content .lead { margin-bottom: 12px; }
+
+/* Four compact service cards, with icon aligned to heading. */
+.services .service-card {
+  padding: 28px 30px;
+  margin-bottom: 0;
+}
+.services .service-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.services .service-title-row .service-icon {
+  position: static;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  margin: 0;
+  border-radius: 12px;
+}
+.services .service-title-row .service-icon i { font-size: 25px; }
+.services .service-title-row h3 {
+  font-size: clamp(20px, 2vw, 24px);
+  margin: 0;
+  line-height: 1.2;
+}
+.services .service-title-row h3 span {
+  display: inline;
+  color: var(--accent-color);
+}
+.services .service-card p { line-height: 1.6; }
+.services .services-footnote {
+  text-align: center;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  font-size: 0.95rem;
+  margin: 26px 0 0;
+}
+
+/* Curated projects: natural desktop grid and accessible touch overlays. */
+.portfolio .portfolio-more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 22px;
+  margin-top: 30px;
+  font-size: 0.95rem;
+}
+.portfolio .portfolio-more > span {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-weight: 600;
+}
+.portfolio .portfolio-more a { color: var(--heading-color); }
+.portfolio .portfolio-more a:hover { color: var(--accent-color); }
+.portfolio .portfolio-more i { font-size: 0.8rem; }
+@media (hover: none), (pointer: coarse) {
+  .portfolio .portfolio-entry .entry-image .entry-overlay {
+    opacity: 1;
+    transform: none;
+    background: linear-gradient(180deg, transparent 8%, rgba(3, 17, 25, .96) 100%);
+  }
+  .portfolio .portfolio-entry .entry-image .entry-overlay .overlay-content,
+  .portfolio .portfolio-entry .entry-image .entry-overlay .entry-links a {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A real intake form, styled to match the existing surface and typography. */
+.contact .faro-intake h2::after { left: 0; transform: none; }
+.contact .contact-form-wrapper.faro-intake { padding: clamp(24px, 3vw, 38px); }
+.contact .faro-intake h2 {
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+  margin-bottom: 22px;
+}
+.contact .faro-intake .form-intro {
+  max-width: 58ch;
+  margin-bottom: 23px;
+  line-height: 1.6;
+}
+.contact .faro-intake .form-label {
+  color: var(--heading-color);
+  font-size: .9rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.contact .faro-intake .field-optional {
+  font-size: .78rem;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 42%);
+}
+.contact .faro-intake .form-control,
+.contact .faro-intake .form-select {
+  min-height: 48px;
+  color: var(--heading-color);
+  background-color: var(--background-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+  border-radius: 8px;
+  padding: 11px 14px;
+}
+.contact .faro-intake textarea.form-control {
+  min-height: 128px;
+  resize: vertical;
+}
+.contact .faro-intake .form-control::placeholder { color: color-mix(in srgb, var(--default-color), transparent 48%); }
+.contact .faro-intake .form-control:focus,
+.contact .faro-intake .form-select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--accent-color), transparent 84%);
+}
+.contact .faro-intake .form-select { color-scheme: dark; }
+.contact .faro-intake .form-note {
+  max-width: 36ch;
+  font-size: .83rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--default-color), transparent 28%);
+}
+.contact .faro-intake .form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.contact .contact-visual img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, .07);
+}
+.contact .contact-visual p {
+  margin: 18px 0 0;
+  font-size: .98rem;
+  text-align: center;
+}
+
+/* Compact footer: brand, social, and contact align on desktop. */
+.footer { padding-bottom: 12px; }
+.footer .footer-top { padding-top: 25px; padding-bottom: 0; }
+.footer .footer-about .logo { margin-bottom: 6px; }
+.footer .footer-about .logo span { font-size: 21px; }
+.footer .footer-about .logo img { max-height: 32px; }
+.footer .footer-about p { font-size: 13px; }
+.footer .social-links a { width: 36px; height: 36px; margin-right: 5px; }
+.footer .copyright { padding-top: 14px; padding-bottom: 12px; }
+
+@media (max-width: 767.98px) {
+  .services .service-card { padding: 24px; }
+  .services .service-title-row { gap: 12px; }
+  .services .service-title-row .service-icon { flex-basis: 48px; width: 48px; height: 48px; }
+  .portfolio .portfolio-grid { gap: 12px; }
+  .contact .contact-visual { max-width: 520px; margin: 0 auto; }
+  .contact .faro-intake .btn-submit { width: 100%; }
+  .footer .footer-about .logo span { font-size: 20px; }
+}
+
+/* Keep portfolio text accessible on keyboard focus as well as touch. */
+.portfolio .portfolio-entry:focus-within .entry-image .entry-overlay,
+.portfolio .portfolio-entry:focus-within .entry-image .entry-overlay .overlay-content,
+.portfolio .portfolio-entry:focus-within .entry-image .entry-overlay .entry-links a {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* --------------------------------------------------------------
+# Featured case studies + balanced inquiry | 11.19.2026
+# Uses existing project screenshots and digitalHorizon.png.
+-------------------------------------------------------------- */
+
+/* Large, editorial case studies. No hover-only text or mobile carousel. */
+.portfolio .work-feature-list {
+  display: grid;
+  gap: clamp(22px, 3vw, 32px);
+}
+.portfolio .work-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(211, 154, 90, 0.18);
+  border-radius: 20px;
+  background: var(--surface-color);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+}
+.portfolio .work-feature:nth-child(even) .work-feature-visual { order: 2; }
+.portfolio .work-feature:nth-child(even) .work-feature-copy { order: 1; }
+.portfolio .work-feature-visual {
+  min-width: 0;
+  min-height: 375px;
+  position: relative;
+  background: #0b1720;
+  overflow: hidden;
+}
+.portfolio .work-feature-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(3, 17, 25, 0.00) 60%, rgba(3, 17, 25, 0.26) 100%);
+}
+.portfolio .work-feature-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.45s ease;
+}
+@media (hover: hover) {
+  .portfolio .work-feature:hover .work-feature-visual img { transform: scale(1.025); }
+}
+.portfolio .work-visual-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  z-index: 2;
+  padding: 7px 12px;
+  background: rgba(3, 17, 25, 0.83);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(8px);
+}
+.portfolio .work-feature-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(26px, 3.7vw, 48px);
+}
+.portfolio .work-index {
+  font-family: var(--nav-font);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+.portfolio .work-feature h3 {
+  font-size: clamp(27px, 2.8vw, 37px);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
+}
+.portfolio .work-intro {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--heading-color);
+  opacity: .91;
+  margin: 0 0 24px;
+}
+.portfolio .work-notes {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 26px;
+}
+.portfolio .work-notes h4 {
+  color: var(--accent-color);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin: 0 0 5px;
+}
+.portfolio .work-notes p {
+  line-height: 1.55;
+  font-size: 14px;
+  margin: 0;
+  color: var(--default-color);
+}
+.portfolio .work-visit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 999px;
+  padding: 11px 19px;
+  background: var(--accent-color);
+  color: #071018;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.portfolio .work-visit:hover,
+.portfolio .work-visit:focus-visible {
+  background: var(--accent-deep);
+  color: #071018;
+  transform: translateY(-2px);
+}
+.portfolio .work-visit:focus-visible {
+  outline: 2px solid var(--heading-color);
+  outline-offset: 3px;
+}
+
+/* Equal-height form/art surfaces at desktop widths. Art remains uncropped. */
+.contact .faro-contact-row > [class*="col-"] { min-width: 0; }
+.contact .faro-contact-row .faro-intake,
+.contact .faro-contact-row .contact-art { height: 100%; }
+.contact .faro-intake .form-intro { margin-bottom: 22px; }
+.contact .faro-intake .form-note { max-width: none; }
+.contact .faro-intake textarea.form-control { min-height: 112px; }
+.contact .contact-art {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 36%, rgba(211,154,90,0.08), transparent 66%), #101f28;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+.contact .contact-art-image {
+  min-height: 0;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(18px, 3vw, 32px);
+}
+.contact .contact-art-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 530px;
+  object-fit: contain;
+}
+.contact .contact-art-caption {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0 22px 26px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--default-color);
+}
+@media (max-width: 991.98px) {
+  .portfolio .work-feature { grid-template-columns: 1fr; }
+  .portfolio .work-feature:nth-child(even) .work-feature-visual,
+  .portfolio .work-feature:nth-child(even) .work-feature-copy { order: initial; }
+  .portfolio .work-feature-visual { min-height: 0; aspect-ratio: 16 / 9; }
+  .portfolio .work-feature-copy { padding: clamp(25px, 5vw, 36px); }
+  .contact .contact-art-image { min-height: 280px; }
+  .contact .contact-art-image img { max-height: 350px; }
+}
+@media (max-width: 575.98px) {
+  .portfolio .work-feature-visual { aspect-ratio: 4 / 3; }
+  .portfolio .work-visual-caption { font-size: 11px; left: 12px; bottom: 12px; }
+  .portfolio .work-feature-copy { padding: 24px; }
+  .portfolio .work-intro { margin-bottom: 20px; }
+  .portfolio .work-notes { gap: 13px; margin-bottom: 23px; }
+  .contact .contact-art-image { min-height: 220px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio .work-feature-visual img,
+  .portfolio .work-visit { transition: none; }
+}
+
+
+/* --------------------------------------------------------------
+# Faro portfolio and inquiry refinement | November 2026
+# Intentional headline breaks, image overlays, compact case-study
+# content, and clearer visual separation. No new dependencies.
+-------------------------------------------------------------- */
+
+/* Use full thoughts as typographic lines, not accidental orphan words. */
+.section-title div { max-width: none; }
+.section-title .section-title-line { display: block; max-width: 100%; }
+.section-title .section-title-line + .section-title-line {
+  color: var(--accent-color);
+  font-weight: 550;
+  margin-top: .14em;
+}
+.about .about-content h2 { max-width: 24ch; }
+
+/* The dark palette remains intact; section-to-section contrast is deliberate. */
+.about.section { background: #081c27; }
+.services.section { background: #05141d; }
+.portfolio.section.light-background { background: #0e2632; }
+.contact.section { background: #081b25; }
+.portfolio .work-feature { background: #172f3b; border-color: rgba(211,154,90,.22); }
+
+/* Case-study image as a branded surface that reveals the site on hover. */
+.portfolio .work-feature-visual { display: block; color: #fff; text-decoration: none; }
+.portfolio .work-feature-visual:hover { color: #fff; }
+.portfolio .work-feature-visual img { min-height: 100%; }
+.portfolio .work-feature-visual::after { display: none; }
+.portfolio .work-visual-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 5px;
+  padding: clamp(22px, 3vw, 38px);
+  color: #fff;
+  background: linear-gradient(145deg, rgba(9,34,47,.70), rgba(13,55,71,.56) 55%, rgba(3,17,25,.77));
+  transition: opacity .4s ease;
+  pointer-events: none;
+}
+.portfolio .work-visual-type {
+  font-family: var(--nav-font);
+  color: #f4bf83;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.portfolio .work-visual-name {
+  color: #fff;
+  font-family: var(--heading-font);
+  font-size: clamp(25px, 2.7vw, 36px);
+  font-weight: 750;
+  line-height: 1.12;
+  text-shadow: 0 2px 16px rgba(0,0,0,.2);
+}
+.portfolio .work-visual-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: .87;
+}
+@media (hover: hover) and (pointer: fine) {
+  .portfolio .work-feature-visual:hover .work-visual-shade,
+  .portfolio .work-feature-visual:focus-visible .work-visual-shade {
+    opacity: 0;
+  }
+}
+.portfolio .work-feature-visual:focus-visible { outline: 3px solid var(--accent-color); outline-offset: -3px; }
+.portfolio .work-feature-visual img[hidden] { display:none; }
+.portfolio .work-feature-visual img[hidden] + .work-visual-shade {
+  background: linear-gradient(145deg, #153c4b, #071a25);
+}
+
+/* Compact case-study hierarchy: role, rationale, capabilities, visit. */
+.portfolio .work-feature-copy { padding: clamp(26px, 3.4vw, 44px); }
+.portfolio .work-index { margin-bottom: 10px; letter-spacing: .1em; }
+.portfolio .work-feature h3 { margin-bottom: 13px; }
+.portfolio .work-intro {
+  color: var(--default-color);
+  opacity: 1;
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.portfolio .work-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.portfolio .work-pills li {
+  padding: 7px 12px;
+  border: 1px solid rgba(211,154,90,.32);
+  border-radius: 999px;
+  background: rgba(211,154,90,.09);
+  color: #f0c79a;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 550;
+}
+.portfolio .work-visit { margin-top: 0; }
+
+/* The final section now has its title + artwork opposite the form. */
+.contact .contact-story { display: flex; flex-direction: column; min-width: 0; }
+.contact .contact-eyebrow {
+  color: var(--accent-color);
+  font: 700 12px var(--nav-font);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: 13px;
+}
+.contact .contact-story h2 {
+  color: var(--heading-color);
+  font-size: clamp(30px, 3.2vw, 45px);
+  font-weight: 750;
+  letter-spacing: -.025em;
+  line-height: 1.13;
+  margin: 0 0 15px;
+}
+.contact .contact-story h2 span { display:block; color: var(--accent-color); }
+.contact .contact-story > p { max-width: 42ch; line-height: 1.65; margin:0 0 22px; }
+.contact .contact-story .contact-art {
+  position: relative;
+  margin: auto 0 0;
+  flex: 1 1 auto;
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(211,154,90,.22);
+  background: radial-gradient(ellipse at 70% 25%, rgba(211,154,90,.18), transparent 62%),
+              linear-gradient(130deg, #214454, #0e2835 80%);
+}
+.contact .contact-story .contact-art::after {
+  content:"";
+  position: absolute;
+  inset: 0;
+  pointer-events:none;
+  background: linear-gradient(150deg, rgba(211,154,90,.10), transparent 55%);
+}
+.contact .contact-story .contact-art img {
+  width: 100%; height: 100%; display:block;
+  object-fit: contain;
+  max-height: 520px;
+  filter: brightness(1.12) contrast(1.02);
+}
+.contact .contact-form-wrapper.faro-intake {
+  padding: clamp(25px, 3.1vw, 42px);
+  background: #162e3a;
+  border: 1px solid rgba(211,154,90,.17);
+  box-shadow: 0 18px 48px rgba(0,0,0,.14);
+}
+.contact .faro-intake form { display: flex; flex-direction:column; justify-content:center; height:100%; }
+.contact .faro-intake .form-control,
+.contact .faro-intake .form-select { background: #0b202c; }
+.contact .faro-intake textarea.form-control { min-height: 140px; }
+
+/* Standalone final thought in the footer. */
+.footer .footer-tagline span { display:block; }
+.footer .footer-tagline .text-accent { margin-top: 2px; }
+
+@media (max-width: 991.98px) {
+  .contact .contact-story .contact-art { flex:none; min-height:0; height:320px; }
+  .contact .faro-contact-row { gap: 28px 0; }
+}
+@media (max-width: 575.98px) {
+  .portfolio .work-visual-shade { padding: 20px; }
+  .portfolio .work-feature-visual .work-visual-name { font-size: 25px; }
+  .portfolio .work-feature-copy { padding: 24px; }
+  .portfolio .work-pills li { font-size: 11px; }
+  .contact .contact-story .contact-art { height: 240px; }
+  .contact .contact-story h2 { font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio .work-visual-shade { transition:none; }
+}
+
+
+/* --------------------------------------------------------------
+# Faro final visual pass | November 2026
+# Rhythmic section headings, tactile light, and simplified previews.
+# No new assets or JavaScript dependencies.
+-------------------------------------------------------------- */
+
+/* A clear label-to-heading gap, but very little space between full thoughts. */
+.section-title h2 {
+  line-height: 1.2;
+  margin: 0 0 25px;
+}
+.section-title div { line-height: 1.14; }
+.section-title .section-title-line + .section-title-line { margin-top: .015em; }
+.section-title { padding-bottom: clamp(28px, 3.3vw, 40px); }
+
+/* Keep the hero statement composed rather than relying on random wraps. */
+.hero .main-heading h1 {
+  max-width: none;
+  font-size: clamp(2.5rem, 4.65vw, 4.7rem);
+  line-height: 1.075;
+  letter-spacing: -.035em;
+}
+.hero .hero-title-line { display: block; white-space: nowrap; }
+.hero .description p { line-height: 1.5; }
+.hero .hero-description-line { display: block; }
+.hero .hero-description-line + .hero-description-line { margin-top: .58em; }
+
+/* A subtle lighthouse-light motif, applied across backgrounds.
+   The fine diagonal grain adds surface depth without introducing an image. */
+.hero.section {
+  background-color: #05141d;
+  background-image:
+    radial-gradient(ellipse 46% 65% at 82% 37%, rgba(211,154,90,.095), transparent 78%),
+    linear-gradient(118deg, transparent 43%, rgba(211,154,90,.026) 57%, transparent 77%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.011) 0 1px, transparent 1px 12px);
+}
+.about.section {
+  background-color: #0a1b24;
+  background-image:
+    radial-gradient(ellipse 70% 105% at 98% 4%, rgba(211,154,90,.045), transparent 68%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.008) 0 1px, transparent 1px 13px);
+}
+.services.section {
+  background-color: #071720;
+  background-image:
+    radial-gradient(ellipse 72% 100% at 0% 70%, rgba(211,154,90,.042), transparent 69%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.008) 0 1px, transparent 1px 13px);
+}
+.portfolio.section.light-background {
+  background-color: #0c1d26;
+  background-image:
+    radial-gradient(ellipse 65% 45% at 96% 15%, rgba(211,154,90,.052), transparent 75%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.01) 0 1px, transparent 1px 13px);
+}
+.contact.section {
+  background-color: #091a23;
+  background-image:
+    radial-gradient(ellipse 65% 85% at 12% 0%, rgba(211,154,90,.058), transparent 73%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.008) 0 1px, transparent 1px 13px);
+}
+.portfolio .work-feature {
+  background: #14252e;
+  border-color: rgba(211,154,90,.17);
+}
+
+/* A few useful approach pillars instead of additional dense copy. */
+.about .approach-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+.about .approach-pills > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  border: 1px solid rgba(211,154,90,.24);
+  background: rgba(211,154,90,.075);
+  border-radius: 999px;
+  color: var(--heading-color);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.about .approach-pills i { color: var(--accent-color); font-size: 16px; line-height: 1; }
+
+/* Screenshot links are softly frosted until hovered, with no duplicate title.
+   The real project title and supporting context live beside the image. */
+.portfolio .work-feature-visual .work-visual-shade {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: clamp(18px, 2.5vw, 30px);
+  background: linear-gradient(135deg, rgba(5,16,24,.37), rgba(5,16,24,.19) 55%, rgba(8,21,29,.43));
+  -webkit-backdrop-filter: blur(2px) saturate(.88);
+  backdrop-filter: blur(2px) saturate(.88);
+  opacity: 1;
+  transition: opacity .35s ease, backdrop-filter .35s ease;
+}
+.portfolio .work-visual-open {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(255,255,255,.30);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(7,20,29,.45);
+  font-size: 19px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .portfolio .work-feature-visual:hover .work-visual-shade,
+  .portfolio .work-feature-visual:focus-visible .work-visual-shade { opacity: .055; }
+}
+
+/* Photographic inquiry image fills its allotted panel while the form stays aligned. */
+.contact .contact-story .contact-art { background: #10232d; }
+.contact .contact-story .contact-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+.contact .faro-intake .row > .col-12.d-flex { justify-content: center !important; }
+
+/* The social row and legal text share one central footer column. */
+.footer { padding-bottom: 0; background: #05131b; }
+.footer .footer-top { padding-top: 28px; padding-bottom: 26px; }
+.footer .footer-inner { min-height: 96px; }
+.footer .footer-center .social-links { justify-content: center; gap: 8px; margin: 0 0 10px; }
+.footer .footer-center .social-links a { margin: 0; width: 34px; height: 34px; }
+.footer .footer-rights {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--default-color), transparent 24%);
+}
+.footer .footer-about .logo { margin-bottom: 7px; }
+.footer .footer-contact p { margin-bottom: 4px; }
+.footer .footer-contact p:last-child { margin-bottom: 0; }
+
+@media (max-width: 991.98px) {
+  .hero .main-heading h1 { font-size: clamp(2.5rem, 6.3vw, 4.3rem); }
+}
+@media (max-width: 767.98px) {
+  .section-title h2 { margin-bottom: 20px; }
+  .hero .main-heading h1 { font-size: clamp(2.3rem, 7.4vw, 3.6rem); }
+  .footer .footer-inner { text-align: center; }
+  .footer .footer-about .logo { justify-content: center; }
+  .footer .footer-contact { text-align: center !important; }
+}
+@media (max-width: 450px) {
+  .hero .main-heading h1 { font-size: clamp(2.2rem, 8vw, 2.6rem); }
+  .about .approach-pills > span { font-size: 12px; padding: 9px 12px; }
+  .portfolio .work-visual-open { width: 38px; height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio .work-feature-visual .work-visual-shade { transition: none; }
+}
